@@ -199,63 +199,12 @@ document.addEventListener('DOMContentLoaded', () => {
         fileReader.readAsText(event.target.files[0]);
     }
 
-    // Initialize the form and load existing quotes
-    function createAddQuoteForm() {
-        if (document.getElementById('addQuoteForm')) {
-            return;
-        }
-
-        const formContainer = document.createElement('div');
-        formContainer.id = 'addQuoteForm';
-
-        const inputText = document.createElement('input');
-        inputText.id = 'newQuoteText';
-        inputText.type = 'text';
-        inputText.placeholder = 'Enter a new quote';
-
-        const inputCategory = document.createElement('input');
-        inputCategory.id = 'newQuoteCategory';
-        inputCategory.type = 'text';
-        inputCategory.placeholder = 'Enter quote category';
-
-        const addButton = document.createElement('button');
-        addButton.id = 'addQuoteBtn';
-        addButton.textContent = 'Add Quote';
-
-        formContainer.appendChild(inputText);
-        formContainer.appendChild(inputCategory);
-        formContainer.appendChild(addButton);
-
-        document.body.appendChild(formContainer);
-    }
-
-    // Create buttons for export and import functionalities
-    function createExportImportControls() {
-        const controlsContainer = document.createElement('div');
-        controlsContainer.id = 'controlsContainer';
-
-        const exportButton = document.createElement('button');
-        exportButton.id = 'exportQuotesBtn';
-        exportButton.textContent = 'Export Quotes';
-        exportButton.addEventListener('click', exportQuotes);
-
-        const importFileInput = document.createElement('input');
-        importFileInput.type = 'file';
-        importFileInput.id = 'importFile';
-        importFileInput.accept = '.json';
-        importFileInput.addEventListener('change', importFromJsonFile);
-
-        controlsContainer.appendChild(exportButton);
-        controlsContainer.appendChild(importFileInput);
-
-        document.body.appendChild(controlsContainer);
-    }
-
     // Initialize everything
     createAddQuoteForm();
-    createExportImportControls();
     loadQuotes();
 
     newQuoteButton.addEventListener('click', showRandomQuote);
     addQuoteButton.addEventListener('click', addQuote);
+    exportButton.addEventListener('click', exportQuotes);
+    importFileInput.addEventListener('change', importFromJsonFile);
 });

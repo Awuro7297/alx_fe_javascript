@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,6 +29,37 @@
         <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
         <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
         <button id="addQuoteBtn">Add Quote</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Quote Generator</title>
+</head>
+<body>
+    <h1>Dynamic Quote Generator</h1>
+    
+    <!-- Quote display area -->
+    <div id="quoteDisplay"></div>
+    
+    <!-- Button to show a random quote -->
+    <button id="newQuote">Show New Quote</button>
+    
+    <!-- Form to add new quotes (dynamically created by JavaScript) -->
+    <div id="addQuoteForm"></div>
+
+    <!-- Export and import controls -->
+    <div id="controlsContainer">
+        <!-- Button to export quotes -->
+        <button id="exportQuotesBtn">Export Quotes</button>
+        
+        <!-- File input for importing quotes -->
+        <input type="file" id="importFile" accept=".json" />
     </div>
 
     <script src="script.js"></script>

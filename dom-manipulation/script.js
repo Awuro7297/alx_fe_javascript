@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to display a random quote
     function showRandomQuote() {
         if (quotes.length === 0) {
-            quoteDisplay.textContent = "No quotes available.";
+            quoteDisplay.innerHTML = "No quotes available.";
             return;
         }
         const randomIndex = Math.floor(Math.random() * quotes.length);
         const randomQuote = quotes[randomIndex];
-        quoteDisplay.textContent = `"${randomQuote.text}" - ${randomQuote.category}`;
+        quoteDisplay.innerHTML = `<p>"${randomQuote.text}"</p><p><strong>- ${randomQuote.category}</strong></p>`;
     }
 
     // Function to add a new quote
